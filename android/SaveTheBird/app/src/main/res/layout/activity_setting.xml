@@ -10,4 +10,89 @@
     android:background="@color/colorWhite"
     tools:context="com.latte_project.stb.savethebird.SettingActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="BGM"
+        android:id="@+id/bgm"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textSize="36dp"
+        android:layout_marginStart="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch2"
+        android:layout_gravity="right"
+        android:layout_marginEnd="40dp"
+        android:layout_alignBottom="@+id/bgm"
+        android:layout_alignParentEnd="true"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/textView4"
+        android:layout_alignTop="@+id/bgm"
+        android:background="@color/abc_search_url_text_normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="SE"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textSize="36dp"
+        android:layout_marginTop="67dp"
+        android:layout_below="@+id/bgm"
+        android:layout_alignStart="@+id/bgm" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1"
+        android:layout_gravity="right"
+        android:layout_alignBottom="@+id/textView2"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        android:layout_alignStart="@+id/switch2"
+        android:layout_alignEnd="@+id/switch2"
+        android:checked="false"
+        android:background="@color/abc_search_url_text_normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Volume"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textSize="36dp"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textView2" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textView3"
+        android:max="99"
+        android:indeterminate="false"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignEnd="@+id/switch1"
+        android:progress="50" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="http://latte-project.info/"
+        android:id="@+id/textView4"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/seekBar"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="67dp" />
 </RelativeLayout>
