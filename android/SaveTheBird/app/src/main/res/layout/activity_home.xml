@@ -38,7 +38,6 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:background="@mipmap/tab_back"
         android:layout_height="100px"
         >
 
