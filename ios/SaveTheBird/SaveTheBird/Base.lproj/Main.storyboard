@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-3755" y="524"/>
         </scene>
-        <!--Item 3-->
+        <!--Settings-->
         <scene sceneID="JnD-Yb-EFc">
             <objects>
-                <viewController id="Gle-ZG-vEY" userLabel="Item 3" sceneMemberID="viewController">
+                <viewController id="Gle-ZG-vEY" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y5Z-cf-l7v"/>
                         <viewControllerLayoutGuide type="bottom" id="4wc-CR-vuT"/>
@@ -46,7 +46,7 @@
         <!--Home-->
         <scene sceneID="V5n-A8-at0">
             <objects>
-                <viewController id="4OJ-OD-kK3" sceneMemberID="viewController">
+                <viewController id="4OJ-OD-kK3" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5jt-XC-PIp"/>
                         <viewControllerLayoutGuide type="bottom" id="NTz-8g-xx9"/>
@@ -54,13 +54,26 @@
                     <view key="view" contentMode="scaleToFill" id="YVX-2g-Sov">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3f-wh-6qN">
+                                <rect key="frame" x="148" y="155" width="304" height="290"/>
+                                <state key="normal" backgroundImage="bird_maruitori"/>
+                                <connections>
+                                    <action selector="startButtonTouched:" destination="4OJ-OD-kK3" eventType="touchUpInside" id="hMe-of-aTI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A3f-wh-6qN" firstAttribute="centerY" secondItem="YVX-2g-Sov" secondAttribute="centerY" id="BgN-G8-Xrs"/>
+                            <constraint firstItem="A3f-wh-6qN" firstAttribute="centerX" secondItem="YVX-2g-Sov" secondAttribute="centerX" id="xdd-Om-8ln"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="oZd-X3-a7S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CT2-Jd-vYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4467" y="2"/>
+            <point key="canvasLocation" x="-4467" y="1"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tC5-Wa-h1s">
@@ -82,4 +95,7 @@
             <point key="canvasLocation" x="-5339" y="514"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bird_maruitori" width="304" height="290"/>
+    </resources>
 </document>
