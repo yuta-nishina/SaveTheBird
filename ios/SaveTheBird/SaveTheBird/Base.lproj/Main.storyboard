@@ -65,8 +65,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A3f-wh-6qN" firstAttribute="centerY" secondItem="YVX-2g-Sov" secondAttribute="centerY" id="BgN-G8-Xrs"/>
-                            <constraint firstItem="A3f-wh-6qN" firstAttribute="centerX" secondItem="YVX-2g-Sov" secondAttribute="centerX" id="xdd-Om-8ln"/>
+                            <constraint firstItem="A3f-wh-6qN" firstAttribute="centerY" secondItem="YVX-2g-Sov" secondAttribute="centerY" id="9gY-db-Ht7"/>
+                            <constraint firstItem="A3f-wh-6qN" firstAttribute="centerX" secondItem="YVX-2g-Sov" secondAttribute="centerX" id="ZDl-7P-fBs"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="oZd-X3-a7S"/>
