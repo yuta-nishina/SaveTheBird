@@ -27,7 +27,7 @@
         <!--Settings-->
         <scene sceneID="JnD-Yb-EFc">
             <objects>
-                <viewController id="Gle-ZG-vEY" sceneMemberID="viewController">
+                <viewController id="Gle-ZG-vEY" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y5Z-cf-l7v"/>
                         <viewControllerLayoutGuide type="bottom" id="4wc-CR-vuT"/>
@@ -43,40 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-4467" y="1097"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="MQ0-dh-nSO">
-            <objects>
-                <viewController id="88d-AR-ps5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wDo-iL-g5e"/>
-                        <viewControllerLayoutGuide type="bottom" id="hkj-39-PAN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t1m-QL-yIs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ゲーム画面です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtP-va-sAI">
-                                <rect key="frame" x="241" y="290" width="119" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wtP-va-sAI" firstAttribute="centerX" secondItem="t1m-QL-yIs" secondAttribute="centerX" id="Niq-WK-wJL"/>
-                            <constraint firstItem="wtP-va-sAI" firstAttribute="centerY" secondItem="t1m-QL-yIs" secondAttribute="centerY" id="zvN-Ej-d3w"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N9f-Wy-4HS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4304" y="-927"/>
-        </scene>
         <!--Home-->
         <scene sceneID="V5n-A8-at0">
             <objects>
-                <viewController id="4OJ-OD-kK3" sceneMemberID="viewController">
+                <viewController id="4OJ-OD-kK3" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5jt-XC-PIp"/>
                         <viewControllerLayoutGuide type="bottom" id="NTz-8g-xx9"/>
@@ -89,7 +59,7 @@
                                 <rect key="frame" x="148" y="155" width="304" height="290"/>
                                 <state key="normal" backgroundImage="bird_maruitori"/>
                                 <connections>
-                                    <segue destination="88d-AR-ps5" kind="modal" id="7lS-wQ-fL4"/>
+                                    <action selector="startButtonTouched:" destination="4OJ-OD-kK3" eventType="touchUpInside" id="hMe-of-aTI"/>
                                 </connections>
                             </button>
                         </subviews>
