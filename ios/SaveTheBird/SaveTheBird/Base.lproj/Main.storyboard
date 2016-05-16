@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-3755" y="524"/>
         </scene>
-        <!--Item 3-->
+        <!--Settings-->
         <scene sceneID="JnD-Yb-EFc">
             <objects>
-                <viewController id="Gle-ZG-vEY" userLabel="Item 3" sceneMemberID="viewController">
+                <viewController id="Gle-ZG-vEY" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y5Z-cf-l7v"/>
                         <viewControllerLayoutGuide type="bottom" id="4wc-CR-vuT"/>
@@ -43,6 +43,24 @@
             </objects>
             <point key="canvasLocation" x="-4467" y="1097"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="MQ0-dh-nSO">
+            <objects>
+                <viewController id="88d-AR-ps5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wDo-iL-g5e"/>
+                        <viewControllerLayoutGuide type="bottom" id="hkj-39-PAN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t1m-QL-yIs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9f-Wy-4HS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4304" y="-927"/>
+        </scene>
         <!--Home-->
         <scene sceneID="V5n-A8-at0">
             <objects>
@@ -54,13 +72,22 @@
                     <view key="view" contentMode="scaleToFill" id="YVX-2g-Sov">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="bird_maruitori" translatesAutoresizingMaskIntoConstraints="NO" id="dFO-YT-Pe0">
+                                <rect key="frame" x="148" y="155" width="304" height="290"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dFO-YT-Pe0" firstAttribute="centerX" secondItem="YVX-2g-Sov" secondAttribute="centerX" id="DeO-Oi-Suq"/>
+                            <constraint firstItem="dFO-YT-Pe0" firstAttribute="centerY" secondItem="YVX-2g-Sov" secondAttribute="centerY" id="pbV-Ox-MtJ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="oZd-X3-a7S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CT2-Jd-vYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4467" y="2"/>
+            <point key="canvasLocation" x="-4467" y="1"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tC5-Wa-h1s">
@@ -82,4 +109,7 @@
             <point key="canvasLocation" x="-5339" y="514"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bird_maruitori" width="304" height="290"/>
+    </resources>
 </document>
