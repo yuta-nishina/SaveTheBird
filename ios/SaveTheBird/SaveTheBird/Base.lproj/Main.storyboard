@@ -5,18 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Page View Controller-->
-        <scene sceneID="Rg4-Tl-zly">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="P9M-qC-cTD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l7o-9M-w4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3108" y="995"/>
-        </scene>
         <!--Charactor-->
         <scene sceneID="Ao6-gB-JW4">
             <objects>
-                <viewController id="YLt-Se-049" sceneMemberID="viewController">
+                <viewController id="YLt-Se-049" customClass="CharactorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3fC-JD-bDl"/>
                         <viewControllerLayoutGuide type="bottom" id="7hm-4D-6sj"/>
@@ -25,16 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4U-Wz-8De">
-                                <rect key="frame" x="180" y="148" width="240" height="128"/>
-                                <connections>
-                                    <segue destination="P9M-qC-cTD" kind="embed" id="hWe-22-ohS"/>
-                                </connections>
-                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ov4-b2-V3c">
+                                <rect key="frame" x="20" y="20" width="560" height="510"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flame" translatesAutoresizingMaskIntoConstraints="NO" id="8G0-T4-9yp">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81" id="jbx-2k-a4E"/>
+                                        </constraints>
+                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAw-Sh-BmD">
+                                        <rect key="frame" x="0.0" y="81" width="560" height="211"/>
+                                    </scrollView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="May-yY-Q3P">
+                                        <rect key="frame" x="0.0" y="292" width="560" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <connections>
+                                            <action selector="pageControl_Tapped:" destination="YLt-Se-049" eventType="valueChanged" id="Mot-Yb-u6h"/>
+                                        </connections>
+                                    </pageControl>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pis-9q-glS">
+                                        <rect key="frame" x="0.0" y="329" width="560" height="181"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="181" id="xST-xL-KkX"/>
+                                        </constraints>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ov4-b2-V3c" secondAttribute="bottom" constant="70" id="3hi-79-qhY"/>
+                            <constraint firstAttribute="trailing" secondItem="Ov4-b2-V3c" secondAttribute="trailing" constant="20" id="DMp-zf-49Y"/>
+                            <constraint firstItem="Ov4-b2-V3c" firstAttribute="leading" secondItem="3Iy-5O-VAL" secondAttribute="leading" constant="20" id="PVj-BT-qyg"/>
+                            <constraint firstItem="Ov4-b2-V3c" firstAttribute="top" secondItem="3Iy-5O-VAL" secondAttribute="top" constant="20" id="cqY-YT-WqM"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Charactor" id="QuH-as-SfO"/>
+                    <connections>
+                        <outlet property="pageControl" destination="May-yY-Q3P" id="jfn-wQ-kD2"/>
+                        <outlet property="scrollView" destination="AAw-Sh-BmD" id="25E-JM-eVD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKH-nS-reV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,5 +145,6 @@
     </scenes>
     <resources>
         <image name="chara01_front_stand" width="350" height="350"/>
+        <image name="flame" width="200" height="200"/>
     </resources>
 </document>
