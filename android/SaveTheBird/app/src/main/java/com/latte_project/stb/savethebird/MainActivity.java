@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
         }
 
-
         Handler handler = new Handler();
         handler.postDelayed(new splashHandler(), 2000);
     }
