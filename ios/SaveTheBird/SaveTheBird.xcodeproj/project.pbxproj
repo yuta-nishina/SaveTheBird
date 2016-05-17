@@ -15,7 +15,6 @@
 		8A673BA01CE59BA200EDEDA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A673B9E1CE59BA200EDEDA8 /* LaunchScreen.storyboard */; };
 		8A673BAB1CE59BA200EDEDA8 /* SaveTheBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A673BAA1CE59BA200EDEDA8 /* SaveTheBirdTests.m */; };
 		8A673BB61CE59BA200EDEDA8 /* SaveTheBirdUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A673BB51CE59BA200EDEDA8 /* SaveTheBirdUITests.m */; };
-		8A6936ED1CE96B2F00AE9C97 /* bird_maruitori.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6936EC1CE96B2F00AE9C97 /* bird_maruitori.png */; };
 		8A6936EF1CE99ED700AE9C97 /* GameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6936EE1CE99ED700AE9C97 /* GameStoryboard.storyboard */; };
 		8A6936F21CE9A38E00AE9C97 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6936F11CE9A38E00AE9C97 /* HomeViewController.m */; };
 		8A6936F51CE9AE6300AE9C97 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6936F41CE9AE6300AE9C97 /* GameViewController.m */; };
@@ -55,7 +54,6 @@
 		8A673BB11CE59BA200EDEDA8 /* SaveTheBirdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveTheBirdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A673BB51CE59BA200EDEDA8 /* SaveTheBirdUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveTheBirdUITests.m; sourceTree = "<group>"; };
 		8A673BB71CE59BA200EDEDA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A6936EC1CE96B2F00AE9C97 /* bird_maruitori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_maruitori.png; sourceTree = "<group>"; };
 		8A6936EE1CE99ED700AE9C97 /* GameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameStoryboard.storyboard; sourceTree = "<group>"; };
 		8A6936F01CE9A38E00AE9C97 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		8A6936F11CE9A38E00AE9C97 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				8A6936F11CE9A38E00AE9C97 /* HomeViewController.m */,
 				8A6936F01CE9A38E00AE9C97 /* HomeViewController.h */,
 				8A6936EE1CE99ED700AE9C97 /* GameStoryboard.storyboard */,
-				8A6936EC1CE96B2F00AE9C97 /* bird_maruitori.png */,
 				8A673B931CE59BA200EDEDA8 /* AppDelegate.h */,
 				8A673B941CE59BA200EDEDA8 /* AppDelegate.m */,
 				8A673B961CE59BA200EDEDA8 /* ViewController.h */,
@@ -262,7 +259,6 @@
 			files = (
 				8A673BA01CE59BA200EDEDA8 /* LaunchScreen.storyboard in Resources */,
 				8A6936EF1CE99ED700AE9C97 /* GameStoryboard.storyboard in Resources */,
-				8A6936ED1CE96B2F00AE9C97 /* bird_maruitori.png in Resources */,
 				8A673B9D1CE59BA200EDEDA8 /* Assets.xcassets in Resources */,
 				8A673B9B1CE59BA200EDEDA8 /* Main.storyboard in Resources */,
 			);
