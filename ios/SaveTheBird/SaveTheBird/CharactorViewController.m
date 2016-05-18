@@ -56,7 +56,7 @@
     // 2つ目の画像
     count++;
     
-    UIImage * image2 = [UIImage imageNamed:@"bird_maruitori"];
+    UIImage * image2 = [UIImage imageNamed:@"chara02_front_stand"];
     CGRect rect2 = CGRectMake(width * count, 0, width, height);
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:rect2];
     
@@ -69,7 +69,7 @@
     // 3つ目の画像
     count++;
     
-    UIImage * image3 = [UIImage imageNamed:@"flame"];
+    UIImage * image3 = [UIImage imageNamed:@"chara03_front_stand"];
     CGRect rect3 = CGRectMake(width * count, 0, width, height);
     UIImageView * imageView3 = [[UIImageView alloc] initWithFrame:rect3];
     
@@ -78,6 +78,14 @@
     imageView3.contentMode = UIViewContentModeScaleAspectFit;
     
     [_scrollView addSubview:imageView3];
+    
+    
+    
+    // キャラクターの名前を表示する
+    _imageView.image = [UIImage imageNamed:@"chara1_name"];
+    
+    // キャラクターの説明文を表示する
+    _textView.text = @"キャラクター１の説明です";
     
 }
 
@@ -91,16 +99,37 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat pageWidth = scrollView.frame.size.width;
     if ((NSInteger)fmod(scrollView.contentOffset.x, pageWidth) == 0) {
+        
+        // 現在のページ数を取得
+        NSInteger currentPage = scrollView.contentOffset.x / pageWidth;
+        
         // ページコントロールに現在のページを設定
-        _pageControl.currentPage = scrollView.contentOffset.x / pageWidth;
+        _pageControl.currentPage = currentPage;
+        
+        // キャラクターの名前を更新
+        
+        
+        // キャラクターの説明文を更新
+        
     }
 }
 
 // ページコントロールがタップされたとき
 - (IBAction)pageControl_Tapped:(id)sender {
+    
+    // 現在のページ数を取得
+    NSInteger currentPage = _pageControl.currentPage;
+    
+    // スクロールビューを現在のページに合わせてスクロール
     CGRect frame = _scrollView.frame;
-    frame.origin.x = frame.size.width * _pageControl.currentPage;
+    frame.origin.x = frame.size.width * currentPage;
     [_scrollView scrollRectToVisible:frame animated:YES];
+    
+    // キャラクターの名前を更新
+    
+    
+    // キャラクターの説明文を更新
+    
 }
 
 /*

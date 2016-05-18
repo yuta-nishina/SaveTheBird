@@ -10,9 +10,12 @@
 
 @interface CharactorViewController : UIViewController<UIScrollViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end
