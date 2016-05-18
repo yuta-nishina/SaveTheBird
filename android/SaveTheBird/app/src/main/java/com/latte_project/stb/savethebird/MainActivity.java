@@ -2,10 +2,13 @@ package com.latte_project.stb.savethebird;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.media.MediaPlayer;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -21,6 +24,10 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
+        // フォント変更
+        TextView txt = (TextView) findViewById(R.id.splashLogo);
+        txt.setTypeface(Typeface.createFromAsset(getAssets(), "logotypejp_mp_m_1.1.ttf"));
+
         // 再生中なら停止
         if (player != null && player.isPlaying()) {
             player.stop(); // 停止
@@ -29,6 +36,7 @@ public class MainActivity extends Activity {
         // 再生
         try {
             player = MediaPlayer.create(this, R.raw.sample);
+            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
             player.setLooping(true);  // 連続再生設定
             player.start(); // 再生
 
@@ -38,7 +46,7 @@ public class MainActivity extends Activity {
         }
 
         Handler handler = new Handler();
-        handler.postDelayed(new splashHandler(), 2000);
+        handler.postDelayed(new splashHandler(), 3000);
     }
 
     // 自動画面遷移
@@ -49,4 +57,6 @@ public class MainActivity extends Activity {
             MainActivity.this.finish();
         }
     }
+
+
 }
