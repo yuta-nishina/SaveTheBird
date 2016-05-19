@@ -12,6 +12,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class SettingActivity extends TabActivity {
 
@@ -32,11 +33,11 @@ public class SettingActivity extends TabActivity {
         setFontType(optTxt);
 
         // フォント変更
-        TextView bgmTxt = (TextView) findViewById(R.id.bgmSwitch);
+        TextView bgmTxt = (TextView) findViewById(R.id.bgmTxt);
         setFontType(bgmTxt);
 
         // フォント変更
-        TextView seTxt = (TextView) findViewById(R.id.seSwitch);
+        TextView seTxt = (TextView) findViewById(R.id.seTxt);
         setFontType(seTxt);
 
 
@@ -70,7 +71,7 @@ public class SettingActivity extends TabActivity {
                 }
         );
 
-        Switch s = (Switch) findViewById(R.id.bgmSwitch);
+        ToggleButton s = (ToggleButton) findViewById(R.id.bgmSwitch);
 
         if (s != null) {
             s.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -102,7 +103,7 @@ public class SettingActivity extends TabActivity {
         switch (view.getId()){
 
             case R.id.sitelink:
-                Uri uri = Uri.parse(String.valueOf(R.string.siteurl));
+                Uri uri = Uri.parse("https://www.google.co.jp");
                 Intent i = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(i);
                 break;
