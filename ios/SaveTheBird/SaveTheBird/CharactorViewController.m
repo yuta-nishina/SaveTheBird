@@ -8,6 +8,7 @@
 
 #import "CharactorViewController.h"
 
+
 @interface CharactorViewController ()
 
 @end
@@ -20,12 +21,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    //TODO キャラクターの情報をCoreDataから取得して辞書の配列を作成
+    // データ取得用のオブジェクトであるFetchオブジェクトを作成
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Charactor class])];
+    
+    // Sort条件を設定（No順で昇順）
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"no" ascending:YES];
+    NSArray * sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // manageObjectContextからデータを取得
+    NSManagedObjectContext * context = [[AppDelegate alloc]init].managedObjectContext;
+    NSArray * results = [context executeFetchRequest:fetchRequest error:nil];
+    
+    _charactors = [NSMutableArray array];
+    for (Charactor * charactor in results) {
+        [self addCharactor:charactor];
+    }
+    
+    //TODO ユーザが現在選択しているキャラクターの番号を取得する
+    NSInteger currentNo = 2; // 後の処理のため取得した番号マイナス１する
     
     _scrollView.delegate = self;
     
@@ -38,54 +58,34 @@
     // スクロールの範囲を設定
     [_scrollView setContentSize:CGSizeMake((pageCount * width), height)];
     
+    // ユーザが選択しているキャラクターの位置にスクロールする
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = frame.size.width * currentNo;
+    [_scrollView scrollRectToVisible:frame animated:YES];
+    
     // スクロールビューに画像を貼り付ける
-    
-    // 1つ目の画像
     NSInteger count = 0;
+    for (Charactor * charactor in _charactors) {
+        UIImage * image = [UIImage imageNamed:charactor.image_stand];
+        CGRect rect = CGRectMake(width * count, 0, width, height);
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:rect];
+        
+        imageView.clipsToBounds = YES;
+        imageView.image = image;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [_scrollView addSubview:imageView];
+        
+        count++;
+    }
+
     
-    UIImage * image1 = [UIImage imageNamed:@"chara01_front_stand"];
-    CGRect rect1 = CGRectMake(width * count, 0, width, height);
-    UIImageView * imageView1 = [[UIImageView alloc] initWithFrame:rect1];
+    Charactor * charactor = [self getCharactor:currentNo];
+    // ユーザが選択しているキャラクターの名前を表示する
+    _imageView.image = [UIImage imageNamed:charactor.name];
     
-    imageView1.clipsToBounds = YES;
-    imageView1.image = image1;
-    imageView1.contentMode = UIViewContentModeScaleAspectFit;
-    
-    [_scrollView addSubview:imageView1];
-    
-    // 2つ目の画像
-    count++;
-    
-    UIImage * image2 = [UIImage imageNamed:@"chara02_front_stand"];
-    CGRect rect2 = CGRectMake(width * count, 0, width, height);
-    UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:rect2];
-    
-    imageView2.clipsToBounds = YES;
-    imageView2.image = image2;
-    imageView2.contentMode = UIViewContentModeScaleAspectFit;
-    
-    [_scrollView addSubview:imageView2];
-    
-    // 3つ目の画像
-    count++;
-    
-    UIImage * image3 = [UIImage imageNamed:@"chara03_front_stand"];
-    CGRect rect3 = CGRectMake(width * count, 0, width, height);
-    UIImageView * imageView3 = [[UIImageView alloc] initWithFrame:rect3];
-    
-    imageView3.clipsToBounds = YES;
-    imageView3.image = image3;
-    imageView3.contentMode = UIViewContentModeScaleAspectFit;
-    
-    [_scrollView addSubview:imageView3];
-    
-    
-    
-    // キャラクターの名前を表示する
-    _imageView.image = [UIImage imageNamed:@"chara1_name"];
-    
-    // キャラクターの説明文を表示する
-    _textView.text = @"キャラクター１の説明です";
+    // ユーザが選択しているキャラクターの説明文を表示する
+    _textView.text = charactor.detail;
     
 }
 
@@ -106,10 +106,15 @@
         // ページコントロールに現在のページを設定
         _pageControl.currentPage = currentPage;
         
+        Charactor * charactor = nil;
+        charactor = _charactors[currentPage];
+//        charactor = [self getCharactor:currentPage];
         // キャラクターの名前を更新
-        
+        NSLog(charactor.name);
+        _imageView.image = [UIImage imageNamed:charactor.name];
         
         // キャラクターの説明文を更新
+        _textView.text = charactor.detail;
         
     }
 }
@@ -125,11 +130,28 @@
     frame.origin.x = frame.size.width * currentPage;
     [_scrollView scrollRectToVisible:frame animated:YES];
     
+    Charactor * charactor = nil;
+    charactor = _charactors[currentPage];
+    //        charactor = [self getCharactor:currentPage];
     // キャラクターの名前を更新
-    
+    _imageView.image = [UIImage imageNamed:charactor.name];
     
     // キャラクターの説明文を更新
+    _textView.text = charactor.detail;
     
+}
+
+-(void)addCharactor:(Charactor *)charactor{
+    [_charactors addObject:charactor];
+}
+
+-(Charactor *)getCharactor:(NSInteger)i{
+    
+    return _charactors[i];
+}
+
+- (NSMutableArray *)getCharactors{
+    return _charactors;
 }
 
 /*

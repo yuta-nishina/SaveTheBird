@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "Charactor.h"
 
 @interface CharactorViewController : UIViewController<UIScrollViewDelegate>
 
@@ -17,5 +19,13 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
+
+@property (strong, atomic) NSMutableArray * charactors;
+
+-(void) addCharactor:(Charactor*)charactor;
+
+-(Charactor *) getCharactor:(NSInteger)i;
+
+-(NSMutableArray *) getCharactors;
 
 @end
