@@ -5,6 +5,6 @@
     <dimen name="option_frame_margin">25dp</dimen>
     <dimen name="option_label_left">30dp</dimen>
     <dimen name="menu_ic_padding">19dp</dimen>
-    <dimen name="indicator_height">10dp</dimen>
+    <dimen name="indicator_height">6dp</dimen>
 
 </resources>

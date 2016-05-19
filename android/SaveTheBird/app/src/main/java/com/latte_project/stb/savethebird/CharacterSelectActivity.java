@@ -8,22 +8,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 public class CharacterSelectActivity extends TabActivity {
 
-    //ViewPagerIndicator mViewPagerIndicator;
+    ViewPagerIndicator mViewPagerIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_select);
 
         ViewPager mViewPager = (ViewPager)findViewById(R.id.viewpager);
-        PagerAdapter mPagerAdapter = new MyPagerAdapter();
+        CustomPagerAdapter mPagerAdapter = new CustomPagerAdapter(this);
         mViewPager.setAdapter(mPagerAdapter);
 
-        /*MyPagerAdapter adapter = new MyPagerAdapter(this);
 
         mViewPagerIndicator = (ViewPagerIndicator) findViewById(R.id.indicator);
-        mViewPagerIndicator.setCount(adapter.getCount());
+        mViewPagerIndicator.setCount(mPagerAdapter.getCount());
         mViewPager
                 .setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
                     @Override
@@ -32,14 +32,31 @@ public class CharacterSelectActivity extends TabActivity {
                         mViewPagerIndicator.setCurrentPosition(position);
                     }
                 });
-                */
+
     }
 
-    private class MyPagerAdapter extends PagerAdapter {
+    private class CustomPagerAdapter extends PagerAdapter {
+
+        int[] pages = {R.layout.char1, R.layout.char2, R.layout.char3};
+
+        Context mContext;
+
+        public CustomPagerAdapter(Context context) {
+            mContext = context;
+        }
+
+        @Override
+        public int getCount() {
+            return pages.length;
+        }
+
+        @Override
+        public boolean isViewFromObject(View v, Object o) {
+            return v.equals(o);
+        }
+
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            // レイアウトファイル名を配列で指定します。
-            int[] pages = {R.layout.char1, R.layout.char2, R.layout.char3};
 
             LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -47,23 +64,15 @@ public class CharacterSelectActivity extends TabActivity {
             layout = inflater.inflate(pages[position], null);
             ((ViewPager) container).addView(layout);
             return layout;
+
         }
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             ((ViewPager)container).removeView((View)object);
         }
-
-        @Override
-        public int getCount() {
-            // ページ数を返します。
-            return 3;
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view.equals(object);
-        }
     }
+
+
 
 }

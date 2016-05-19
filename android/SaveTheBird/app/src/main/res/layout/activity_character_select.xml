@@ -46,15 +46,15 @@
                 android:id="@+id/viewpager"
                 android:layout_margin="10dp"
                 android:layout_marginBottom="20dp" />
+
             <!-- ページの下に来るようにインディケータを配置 -->
-            <!--
-            <com.example.indicator.ViewPagerIndicator
+            <com.latte_project.stb.savethebird.ViewPagerIndicator
                 android:id="@+id/indicator"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/pager"
+                android:layout_height="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_alignBottom="@+id/viewpager"
                 android:layout_marginBottom="@dimen/indicator_height" />
- -->
 
 
             <TextView
