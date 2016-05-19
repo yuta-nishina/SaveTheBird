@@ -61,6 +61,7 @@ public class ViewPagerIndicator extends RadioGroup {
      * @param position
      */
     public void setCurrentPosition(int position) {
+
         if (position >= mCount) {
             position = mCount - 1;
         }

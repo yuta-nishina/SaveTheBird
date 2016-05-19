@@ -2,7 +2,6 @@ package com.latte_project.stb.savethebird;
 
 import android.content.Context;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,12 +15,7 @@ import android.widget.TextView;
 
 public class SettingActivity extends TabActivity {
 
-    private MediaPlayer player;
     private Intent intentBgm = null;
-
-    AudioManager am;
-    Switch bgm;
-    Switch se;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,13 +107,6 @@ public class SettingActivity extends TabActivity {
                 startActivity(i);
                 break;
 
-            case R.id.bgmSwitch:
-
-                break;
-
-            case R.id.seSwitch:
-
-                break;
         }
     }
 
