@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
+import android.util.Log;
 
 public class TabActivity extends Activity{
 
