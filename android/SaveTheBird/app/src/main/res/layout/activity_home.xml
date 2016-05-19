@@ -17,13 +17,13 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="245dp"
+            android:layout_height="281dp"
             android:id="@+id/playBtn"
             android:layout_gravity="center_horizontal|top"
             android:background="@mipmap/bird_maruitori"
             android:layout_marginTop="150dp"
             android:onClick="onClick"
-            android:layout_weight="0.34"
+            android:layout_weight="0.51"
             android:layout_marginBottom="0dp" />
 
 

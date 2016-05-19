@@ -6,11 +6,10 @@ package com.latte_project.stb.savethebird;
 
 import android.graphics.Typeface;
 import android.app.Activity;
-import android.os.Bundle;
-import android.view.Window;
 import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
+import android.util.Log;
 
 public class TabActivity extends Activity{
 
