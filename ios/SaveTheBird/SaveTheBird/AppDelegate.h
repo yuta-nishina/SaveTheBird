@@ -19,6 +19,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (NSMutableArray *)getCharactors;
 
 
 @end

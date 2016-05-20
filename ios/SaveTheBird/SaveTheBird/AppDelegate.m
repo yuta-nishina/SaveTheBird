@@ -18,32 +18,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    // CoreData用ディレクトリの作成
-    NSString * coreDataPath = @"/testDir/";
-    Boolean isInit = NO;
-    NSString * dirPath;
-    NSFileManager * fileMgr;
-    NSError * error = nil;
-    dirPath = [coreDataPath stringByDeletingLastPathComponent];
-    fileMgr = [NSFileManager defaultManager];
-    if (![fileMgr fileExistsAtPath:dirPath]) {
-        if (![fileMgr createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:&error]) {
-            NSLog(@"Failed to create directory at path %@, error %@", dirPath, [error localizedDescription]);
-        }
-        isInit = YES;
-    }
-    
-    // CoreDataに初期データを挿入する
-//    if (isInit) {
+
+    // CoreDataに初期データが入っていない場合、初期データを挿入する
+    NSMutableArray * charactors = [self getCharactors];
+
+    if (charactors.count == 0) {
         if ([self initMasterData] == 0) {
             NSError * error = nil;
             NSLog(@"initMasterData: failed, %@", [error localizedDescription]);
             return nil;
         }
-//    }
-    
+    }
     return YES;
+}
+
+- (NSMutableArray *)getCharactors{
+    
+    // データ取得用のオブジェクトであるFetchオブジェクトを作成
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Charactor class])];
+    
+    // Sort条件を設定（No順で昇順）
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"no" ascending:YES];
+    NSArray * sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // manageObjectContextからデータを取得
+    NSManagedObjectContext * context = [[AppDelegate alloc]init].managedObjectContext;
+    NSArray * results = [context executeFetchRequest:fetchRequest error:nil];
+    
+    
+    NSMutableArray * charactors = [NSMutableArray array];
+    for (Charactor * charactor in results) {
+        [charactors addObject:charactor];
+    }
+    
+    return charactors;
 }
 
 - (NSUInteger)initMasterData {
