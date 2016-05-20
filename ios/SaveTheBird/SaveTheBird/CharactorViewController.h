@@ -20,7 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 
-@property (strong, atomic) NSMutableArray * charactors;
+@property NSMutableArray * charactors;
 
 -(void) addCharactor:(Charactor*)charactor;
 

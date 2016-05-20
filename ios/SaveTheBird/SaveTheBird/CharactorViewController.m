@@ -27,25 +27,10 @@
     [super viewWillAppear:animated];
     
     //TODO キャラクターの情報をCoreDataから取得して辞書の配列を作成
-    // データ取得用のオブジェクトであるFetchオブジェクトを作成
-    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Charactor class])];
-    
-    // Sort条件を設定（No順で昇順）
-    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"no" ascending:YES];
-    NSArray * sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // manageObjectContextからデータを取得
-    NSManagedObjectContext * context = [[AppDelegate alloc]init].managedObjectContext;
-    NSArray * results = [context executeFetchRequest:fetchRequest error:nil];
-    
-    _charactors = [NSMutableArray array];
-    for (Charactor * charactor in results) {
-        [self addCharactor:charactor];
-    }
+    _charactors = self.getCharactors;
     
     //TODO ユーザが現在選択しているキャラクターの番号を取得する
-    NSInteger currentNo = 2; // 後の処理のため取得した番号マイナス１する
+    NSInteger currentNo = 0; //TODO 後の処理のため取得した番号マイナス１する
     
     _scrollView.delegate = self;
     
@@ -78,7 +63,6 @@
         
         count++;
     }
-
     
     Charactor * charactor = [self getCharactor:currentNo];
     // ユーザが選択しているキャラクターの名前を表示する
@@ -106,11 +90,12 @@
         // ページコントロールに現在のページを設定
         _pageControl.currentPage = currentPage;
         
-        Charactor * charactor = nil;
-        charactor = _charactors[currentPage];
+        
+        _charactors = self.getCharactors;
+        Charactor * charactor = [self getCharactor:currentPage];
+//        charactor = _charactors[currentPage];
 //        charactor = [self getCharactor:currentPage];
         // キャラクターの名前を更新
-        NSLog(charactor.name);
         _imageView.image = [UIImage imageNamed:charactor.name];
         
         // キャラクターの説明文を更新
@@ -130,8 +115,9 @@
     frame.origin.x = frame.size.width * currentPage;
     [_scrollView scrollRectToVisible:frame animated:YES];
     
-    Charactor * charactor = nil;
-    charactor = _charactors[currentPage];
+    _charactors = self.getCharactors;
+    Charactor * charactor = [self getCharactor:currentPage];
+    //        charactor = _charactors[currentPage];
     //        charactor = [self getCharactor:currentPage];
     // キャラクターの名前を更新
     _imageView.image = [UIImage imageNamed:charactor.name];
@@ -151,6 +137,24 @@
 }
 
 - (NSMutableArray *)getCharactors{
+    
+    // データ取得用のオブジェクトであるFetchオブジェクトを作成
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Charactor class])];
+    
+    // Sort条件を設定（No順で昇順）
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"no" ascending:YES];
+    NSArray * sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // manageObjectContextからデータを取得
+    NSManagedObjectContext * context = [[AppDelegate alloc]init].managedObjectContext;
+    NSArray * results = [context executeFetchRequest:fetchRequest error:nil];
+    
+    _charactors = [NSMutableArray array];
+    for (Charactor * charactor in results) {
+        [self addCharactor:charactor];
+    }
+    
     return _charactors;
 }
 
