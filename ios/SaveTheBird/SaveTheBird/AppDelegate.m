@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    // CoreDataに初期データが入っていない場合、初期データを挿入する
+    // CoreDataに初期データが入っていない場合、初期データを挿入する  --------------------------------------
     NSMutableArray * charactors = [self getCharactors];
 
     if (charactors.count == 0) {
@@ -29,6 +29,26 @@
             return nil;
         }
     }
+    
+    // BGMの再生準備  -----------------------------------------------------------------------------
+    NSError *error = nil;
+    // 再生する audio ファイルのパスを取得
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"mp3"];
+    // パスから、再生するURLを作成する
+    NSURL *url = [[NSURL alloc]initFileURLWithPath:path];
+    // audio を再生するプレイヤーを作成する
+    self.bgmPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    // 繰り返しの回数を指定
+    self.bgmPlayer.numberOfLoops = -1; // 無限ループ(-1)
+    // エラーが起きたとき
+    if (error != nil) {
+        NSLog(@"Error %@", [error localizedDescription]);
+    }
+    // 自分自身をデリゲートに設定
+    [self.bgmPlayer setDelegate:self];
+    
+
+    
     return YES;
 }
 
@@ -102,6 +122,11 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // BGMの再生をストップする
+    if (self.bgmPlayer.playing) {
+        [self.bgmPlayer stop];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -110,6 +135,11 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // BGMの再生をスタートする
+    if (!self.bgmPlayer.playing) {
+        [self.bgmPlayer play];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -134,6 +164,15 @@
         return _managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"SaveTheBird" withExtension:@"momd"];
+    
+    NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
+    NSArray *keys = [dic allKeys];
+    NSArray *vals = [dic allValues];
+    for (int i=0; i<[keys count]; i++) {
+        NSLog(@"キー：%@ 値：%@",[keys objectAtIndex:i],[vals objectAtIndex:i]);
+    }
+    
+    
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
