@@ -13,6 +13,9 @@
 		8A1997101CEC4F1E00AB5BC6 /* MasterData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A19970F1CEC4F1E00AB5BC6 /* MasterData.plist */; };
 		8A1997151CED416A00AB5BC6 /* Charactor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1997121CED416A00AB5BC6 /* Charactor+CoreDataProperties.m */; };
 		8A1997161CED416A00AB5BC6 /* Charactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1997141CED416A00AB5BC6 /* Charactor.m */; };
+		8A19971A1CF0B4E400AB5BC6 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A1997191CF0B4E400AB5BC6 /* sample.mp3 */; };
+		8A19971C1CF0B53C00AB5BC6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A19971B1CF0B53C00AB5BC6 /* AVFoundation.framework */; };
+		8A19971E1CF0BC7300AB5BC6 /* se_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A19971D1CF0BC7300AB5BC6 /* se_sample.mp3 */; };
 		8A673B921CE59BA200EDEDA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A673B911CE59BA200EDEDA8 /* main.m */; };
 		8A673B951CE59BA200EDEDA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A673B941CE59BA200EDEDA8 /* AppDelegate.m */; };
 		8A673B981CE59BA200EDEDA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A673B971CE59BA200EDEDA8 /* ViewController.m */; };
@@ -53,6 +56,9 @@
 		8A1997121CED416A00AB5BC6 /* Charactor+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Charactor+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8A1997131CED416A00AB5BC6 /* Charactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Charactor.h; sourceTree = "<group>"; };
 		8A1997141CED416A00AB5BC6 /* Charactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Charactor.m; sourceTree = "<group>"; };
+		8A1997191CF0B4E400AB5BC6 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+		8A19971B1CF0B53C00AB5BC6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8A19971D1CF0BC7300AB5BC6 /* se_sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = se_sample.mp3; sourceTree = "<group>"; };
 		8A673B8D1CE59BA200EDEDA8 /* SaveTheBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveTheBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A673B911CE59BA200EDEDA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A673B931CE59BA200EDEDA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A19971C1CF0B53C00AB5BC6 /* AVFoundation.framework in Frameworks */,
 				8A19970E1CEC485500AB5BC6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +114,7 @@
 		8A673B841CE59BA200EDEDA8 = {
 			isa = PBXGroup;
 			children = (
+				8A19971B1CF0B53C00AB5BC6 /* AVFoundation.framework */,
 				8A19970D1CEC485500AB5BC6 /* CoreData.framework */,
 				8A673B8F1CE59BA200EDEDA8 /* SaveTheBird */,
 				8A673BA91CE59BA200EDEDA8 /* SaveTheBirdTests */,
@@ -159,6 +167,8 @@
 				8A673BA11CE59BA200EDEDA8 /* Info.plist */,
 				8A19970F1CEC4F1E00AB5BC6 /* MasterData.plist */,
 				8A19970A1CEC435600AB5BC6 /* SaveTheBird.xcdatamodeld */,
+				8A1997191CF0B4E400AB5BC6 /* sample.mp3 */,
+				8A19971D1CF0BC7300AB5BC6 /* se_sample.mp3 */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -289,6 +299,8 @@
 				8A6936EF1CE99ED700AE9C97 /* GameStoryboard.storyboard in Resources */,
 				8A1997101CEC4F1E00AB5BC6 /* MasterData.plist in Resources */,
 				8A673B9D1CE59BA200EDEDA8 /* Assets.xcassets in Resources */,
+				8A19971E1CF0BC7300AB5BC6 /* se_sample.mp3 in Resources */,
+				8A19971A1CF0B4E400AB5BC6 /* sample.mp3 in Resources */,
 				8A1996C71CEBF4B500AB5BC6 /* logotypejp_mp_m_1.1.ttf in Resources */,
 				8A673B9B1CE59BA200EDEDA8 /* Main.storyboard in Resources */,
 			);
@@ -469,10 +481,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SaveTheBird/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = savethebird.SaveTheBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,10 +497,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SaveTheBird/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = savethebird.SaveTheBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
