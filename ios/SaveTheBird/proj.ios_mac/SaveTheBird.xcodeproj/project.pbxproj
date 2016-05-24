@@ -23,7 +23,6 @@
 		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
-		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
 		503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503AE11A17EB9C5A00D1A890 /* IOKit.framework */; };
@@ -63,7 +62,7 @@
 		8A0F53951CF2DAAA0048A61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F538A1CF2DAAA0048A61F /* LaunchScreen.storyboard */; };
 		8A0F53961CF2DAAA0048A61F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F538B1CF2DAAA0048A61F /* HomeViewController.m */; };
 		8A0F53971CF2DAAA0048A61F /* GameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F538D1CF2DAAA0048A61F /* GameStoryboard.storyboard */; };
-		8A0F53981CF2DAAA0048A61F /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F538F1CF2DAAA0048A61F /* GameViewController.m */; };
+		8A0F53981CF2DAAA0048A61F /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F538F1CF2DAAA0048A61F /* GameViewController.mm */; };
 		8A0F53991CF2DAAA0048A61F /* CharactorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F53911CF2DAAA0048A61F /* CharactorViewController.m */; };
 		8A0F53A71CF2DAF00048A61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F539E1CF2DAF00048A61F /* Assets.xcassets */; };
 		8A0F53A81CF2DAF00048A61F /* logotypejp_mp_m_1.1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A0F539F1CF2DAF00048A61F /* logotypejp_mp_m_1.1.ttf */; };
@@ -76,6 +75,8 @@
 		8A0F53B41CF2E6040048A61F /* SaveTheBird.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F53B21CF2E6040048A61F /* SaveTheBird.xcdatamodeld */; };
 		8A0F53B91CF2E7270048A61F /* Charactor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F53B61CF2E7270048A61F /* Charactor+CoreDataProperties.m */; };
 		8A0F53BA1CF2E7270048A61F /* Charactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F53B81CF2E7270048A61F /* Charactor.m */; };
+		8A0F53CD1CF425460048A61F /* CocosController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F53CC1CF425460048A61F /* CocosController.mm */; };
+		8A0F53D71CF42A960048A61F /* CocosAppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F53D51CF42A960048A61F /* CocosAppDelegate.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -140,8 +141,6 @@
 		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
-		503AE0FB17EB989F00D1A890 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ios/AppController.mm; sourceTree = SOURCE_ROOT; };
 		503AE0FD17EB989F00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ios/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		503AE0FE17EB989F00D1A890 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ios/RootViewController.h; sourceTree = SOURCE_ROOT; };
 		503AE0FF17EB989F00D1A890 /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = SOURCE_ROOT; };
@@ -184,7 +183,7 @@
 		8A0F538C1CF2DAAA0048A61F /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		8A0F538D1CF2DAAA0048A61F /* GameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameStoryboard.storyboard; sourceTree = "<group>"; };
 		8A0F538E1CF2DAAA0048A61F /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		8A0F538F1CF2DAAA0048A61F /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		8A0F538F1CF2DAAA0048A61F /* GameViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewController.mm; sourceTree = "<group>"; };
 		8A0F53901CF2DAAA0048A61F /* CharactorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharactorViewController.h; sourceTree = "<group>"; };
 		8A0F53911CF2DAAA0048A61F /* CharactorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharactorViewController.m; sourceTree = "<group>"; };
 		8A0F539E1CF2DAF00048A61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +199,10 @@
 		8A0F53B61CF2E7270048A61F /* Charactor+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Charactor+CoreDataProperties.m"; path = "../proj.ios_mac/Charactor+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8A0F53B71CF2E7270048A61F /* Charactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Charactor.h; path = ../proj.ios_mac/Charactor.h; sourceTree = "<group>"; };
 		8A0F53B81CF2E7270048A61F /* Charactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Charactor.m; path = ../proj.ios_mac/Charactor.m; sourceTree = "<group>"; };
+		8A0F53CB1CF425460048A61F /* CocosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosController.h; sourceTree = "<group>"; };
+		8A0F53CC1CF425460048A61F /* CocosController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CocosController.mm; sourceTree = "<group>"; };
+		8A0F53D51CF42A960048A61F /* CocosAppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocosAppDelegate.cpp; sourceTree = "<group>"; };
+		8A0F53D61CF42A960048A61F /* CocosAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosAppDelegate.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -259,8 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				5087E77117EB970100C73F5D /* Icons */,
-				503AE0FA17EB989F00D1A890 /* AppController.h */,
-				503AE0FB17EB989F00D1A890 /* AppController.mm */,
 				503AE0FD17EB989F00D1A890 /* Prefix.pch */,
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
 				503AE0FF17EB989F00D1A890 /* RootViewController.mm */,
@@ -362,7 +363,7 @@
 				8A0F538C1CF2DAAA0048A61F /* HomeViewController.h */,
 				8A0F538D1CF2DAAA0048A61F /* GameStoryboard.storyboard */,
 				8A0F538E1CF2DAAA0048A61F /* GameViewController.h */,
-				8A0F538F1CF2DAAA0048A61F /* GameViewController.m */,
+				8A0F538F1CF2DAAA0048A61F /* GameViewController.mm */,
 				8A0F53901CF2DAAA0048A61F /* CharactorViewController.h */,
 				8A0F53911CF2DAAA0048A61F /* CharactorViewController.m */,
 				8A0F539E1CF2DAF00048A61F /* Assets.xcassets */,
@@ -371,6 +372,10 @@
 				8A0F53A01CF2DAF00048A61F /* Info.plist */,
 				8A0F53A11CF2DAF00048A61F /* MasterData.plist */,
 				8A0F53A31CF2DAF00048A61F /* sample.mp3 */,
+				8A0F53CB1CF425460048A61F /* CocosController.h */,
+				8A0F53CC1CF425460048A61F /* CocosController.mm */,
+				8A0F53D51CF42A960048A61F /* CocosAppDelegate.cpp */,
+				8A0F53D61CF42A960048A61F /* CocosAppDelegate.h */,
 				8A0F53A41CF2DAF00048A61F /* se_sample.mp3 */,
 			);
 			name = Classes;
@@ -586,17 +591,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A0F53981CF2DAAA0048A61F /* GameViewController.m in Sources */,
+				8A0F53981CF2DAAA0048A61F /* GameViewController.mm in Sources */,
 				8A0F53931CF2DAAA0048A61F /* ViewController.m in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				8A0F53991CF2DAAA0048A61F /* CharactorViewController.m in Sources */,
 				8A0F53BA1CF2E7270048A61F /* Charactor.m in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				8A0F53961CF2DAAA0048A61F /* HomeViewController.m in Sources */,
 				8A0F53B91CF2E7270048A61F /* Charactor+CoreDataProperties.m in Sources */,
+				8A0F53D71CF42A960048A61F /* CocosAppDelegate.cpp in Sources */,
 				8A0F53B41CF2E6040048A61F /* SaveTheBird.xcdatamodeld in Sources */,
 				8A0F53B11CF2DDCE0048A61F /* main.m in Sources */,
+				8A0F53CD1CF425460048A61F /* CocosController.mm in Sources */,
 				8A0F53921CF2DAAA0048A61F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,6 +637,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -651,6 +658,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -664,6 +672,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -682,6 +691,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = 1;

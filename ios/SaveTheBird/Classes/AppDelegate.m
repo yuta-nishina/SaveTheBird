@@ -164,13 +164,6 @@
         return _managedObjectModel;
     }
     
-    NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
-    NSArray *keys = [dic allKeys];
-    NSArray *vals = [dic allValues];
-    for (int i=0; i<[keys count]; i++) {
-        NSLog(@"キー：%@ 値：%@",[keys objectAtIndex:i],[vals objectAtIndex:i]);
-    }
-    
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"SaveTheBird" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;

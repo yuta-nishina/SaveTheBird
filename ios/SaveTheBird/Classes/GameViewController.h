@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@class RootViewController;
+
+@interface GameViewController : UIViewController{
+    UIWindow *window;
+}
+
+@property(nonatomic, readonly) RootViewController* viewController;
 
 @end
